@@ -50,11 +50,14 @@ Deno.serve(async (req) => {
 
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+      'Content-Type': 'application/json',
+      'origin': 'http://localhost',
+      },                                                
       body: JSON.stringify({
         service_id: serviceId,
         template_id: templateId,
-        user_id: publicKey,
+        public_key: publicKey,
         template_params: {
           from_name: name.trim(),
           from_email: email.trim(),
