@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3 } from 'lucide-react';
+import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const skillBadges = [
   { name: "AWS", icon: Cloud },
@@ -26,6 +27,7 @@ const cloudProjects = [
     iconGradient: "from-[hsl(201,96%,32%)] to-[hsl(201,100%,24%)]",
     description: "Designed and deployed a highly available and scalable 3-tier web architecture on AWS. Implemented load balancing, auto scaling, secure HTTPS communication, and DNS routing to simulate a real-world production environment.",
     liveUrl: "https://3tier.myserver.sbs/",
+    architectureUrl: "/threetier-architecture",
     technologies: ["EC2", "Auto Scaling", "Application Load Balancer", "RDS", "Route53", "ACM", "CloudWatch", "CI/CD"],
     features: [
       { icon: Shield, text: "Highly available architecture" },
@@ -44,6 +46,7 @@ const cloudProjects = [
     iconGradient: "from-[hsl(38,92%,50%)] to-[hsl(38,92%,40%)]",
     description: "Built a serverless application enabling users to upload images through a web interface. The application uses AWS Lambda and API Gateway for backend processing, stores images in Amazon S3, and manages metadata using DynamoDB.",
     liveUrl: "http://serverless-image-upload-gowtham.s3-website-us-east-1.amazonaws.com",
+    architectureUrl: "/serverless-architecture",
     technologies: ["S3", "Lambda", "API Gateway", "DynamoDB"],
     features: [
       { icon: Server, text: "Serverless architecture" },
@@ -53,6 +56,26 @@ const cloudProjects = [
       { icon: Code, text: "API integration using API Gateway" },
     ],
     architecture: ["User", "S3 Static Website", "API Gateway", "Lambda", "S3 + DynamoDB"],
+  },
+  {
+    title: "AWS Cloud Fun Facts Generator",
+    subtitle: "Serverless + GenAI Architecture",
+    date: "March 2026",
+    icon: Zap,
+    iconGradient: "from-[hsl(150,60%,40%)] to-[hsl(150,70%,30%)]",
+    description: "Deployed an AWS Lambda function to serve random cloud fun facts with Amazon Bedrock (Claude AI) integration for witty AI-enhanced responses. A solid foundation for modern serverless applications combining databases, APIs, and Generative AI.",
+    liveUrl: "https://funfacts.myserver.sbs",
+    architectureUrl: "/funfacts-architecture",
+    technologies: ["Lambda", "API Gateway", "DynamoDB", "Bedrock", "Amplify", "IAM", "Route53"],
+    features: [
+      { icon: Zap, text: "Serverless backend with Lambda" },
+      { icon: Server, text: "REST API via API Gateway" },
+      { icon: Database, text: "Facts stored in DynamoDB" },
+      { icon: Eye, text: "GenAI enhancement via Bedrock (Claude AI)" },
+      { icon: Globe, text: "React frontend hosted on Amplify" },
+      { icon: Shield, text: "Secure IAM roles & permissions" },
+    ],
+    architecture: ["User", "Amplify", "API Gateway", "Lambda", "DynamoDB", "Bedrock"],
   },
 ];
 
@@ -190,25 +213,50 @@ const CloudProjectsSection = () => {
                 </div>
               </div>
 
-              {/* View Architecture Button */}
-              <div className="px-6 pb-6">
-                <Button
-                  variant="outline"
-                  className="w-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 transition-all duration-300"
-                  asChild={!!project.liveUrl}
-                >
-                  {project.liveUrl ? (
+              {/* Action Buttons */}
+              <div className="px-6 pb-6 flex gap-3">
+                {project.architectureUrl ? (
+                  <Button
+                    variant="outline"
+                    className="flex-1 gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 transition-all duration-300"
+                    asChild
+                  >
+                    <Link to={project.architectureUrl}>
+                      <Eye className="w-4 h-4" />
+                      View Architecture
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button
+                    variant="outline"
+                    className="flex-1 gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 transition-all duration-300"
+                    asChild={!!project.liveUrl}
+                  >
+                    {project.liveUrl ? (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <Eye className="w-4 h-4" />
+                        View Architecture
+                      </a>
+                    ) : (
+                      <>
+                        <Eye className="w-4 h-4" />
+                        View Architecture
+                      </>
+                    )}
+                  </Button>
+                )}
+                {project.liveUrl && (
+                  <Button
+                    variant="default"
+                    className="flex-1 gap-2 bg-gradient-to-r from-primary to-primary/80 transition-all duration-300"
+                    asChild
+                  >
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Eye className="w-4 h-4" />
-                      View Architecture
+                      <ExternalLink className="w-4 h-4" />
+                      View Project
                     </a>
-                  ) : (
-                    <>
-                      <Eye className="w-4 h-4" />
-                      View Architecture
-                    </>
-                  )}
-                </Button>
+                  </Button>
+                )}
               </div>
             </motion.div>
           ))}

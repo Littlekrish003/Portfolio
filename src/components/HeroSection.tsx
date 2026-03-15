@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, Award, Mail, Cloud, Server, Cog, Sparkles, Zap, Database } from 'lucide-react';
+import { Eye, Award, Mail, Cloud, Server, Cog, Sparkles, Zap, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePhoto from '@/assets/profile-photo.jpg';
 const FloatingIcon = ({
@@ -198,11 +198,13 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="group relative overflow-hidden bg-gradient-to-r from-cloud-500 to-cloud-600 hover:from-cloud-600 hover:to-cloud-700 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2 w-full sm:w-auto px-8"
-                onClick={() => window.print()}
+                asChild
               >
-                <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
-                Download Resume
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <a href="http://resume.myserver.sbs/" target="_blank" rel="noopener noreferrer">
+                  <Eye className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
+                  View Resume
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                </a>
               </Button>
               
               <Button size="lg" variant="outline" className="glass border-cloud-200 hover:border-cloud-300 hover:bg-cloud-50/50 gap-2 w-full sm:w-auto px-8 transition-all duration-300" asChild>
