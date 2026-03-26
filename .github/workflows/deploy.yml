@@ -35,7 +35,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Upload to S3
-        run: aws s3 sync dist/ s3://gowtham-portfolio-website --delete
+        run: aws s3 sync dist/ s3://portfolio-myserver-bucket --delete
 
       - name: Invalidate CloudFront
         run: aws cloudfront create-invalidation --distribution-id E1BHUB1SQ41Z6E --paths "/*"
