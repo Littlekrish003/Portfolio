@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Cloud, Zap, Database, Globe, Brain, Server, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -58,12 +59,16 @@ const architectureSteps = [
 const FunFactsArchitecture = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
         <div className="section-container py-4 flex items-center justify-between">
-          <Button variant="ghost" onClick={() => navigate('/#cloud-projects')} className="gap-2">
+          <Button variant="ghost" onClick={() => { navigate('/'); setTimeout(() => document.getElementById('cloud-projects')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="gap-2">
             <ArrowLeft className="w-4 h-4" />
             Back to Portfolio
           </Button>

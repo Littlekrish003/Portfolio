@@ -39,8 +39,9 @@ Deno.serve(async (req) => {
     const serviceId = Deno.env.get('EMAILJS_SERVICE_ID');
     const templateId = Deno.env.get('EMAILJS_TEMPLATE_ID');
     const publicKey = Deno.env.get('EMAILJS_PUBLIC_KEY');
+    const privateKey = Deno.env.get('EMAILJS_PRIVATE_KEY');
 
-    if (!serviceId || !templateId || !publicKey) {
+    if (!serviceId || !templateId || !publicKey || !privateKey) {
       console.error('Missing EmailJS configuration');
       return new Response(JSON.stringify({ error: 'Email service not configured.' }), {
         status: 500,
@@ -50,14 +51,14 @@ Deno.serve(async (req) => {
 
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
-      headers: { 
-      'Content-Type': 'application/json',
-      'origin': 'http://localhost',
-      },                                                
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         service_id: serviceId,
         template_id: templateId,
-        public_key: publicKey,
+        user_id: publicKey,
+        accessToken: privateKey,
         template_params: {
           from_name: name.trim(),
           from_email: email.trim(),

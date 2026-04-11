@@ -183,7 +183,7 @@ const HeroSection = () => {
 
             {/* Title */}
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-muted-foreground mb-3 font-medium">
-              AWS Cloud Practitioner | Serverless & Cloud Architecture Projects | Aspiring Cloud Engineer
+              AWS Cloud Practitioner | Aspiring Cloud Engineer
             </motion.p>
             
             <motion.p variants={itemVariants} className="text-lg text-muted-foreground mb-8 leading-relaxed">
