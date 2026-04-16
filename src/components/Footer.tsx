@@ -1,4 +1,5 @@
-import { Cloud, Heart } from 'lucide-react';
+import awsCloudIcon from '@/assets/aws-cloud-icon.png';
+import awsIcon from '@/assets/aws-icon.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="border-t border-border py-12 bg-rose-50">
@@ -6,8 +7,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <Cloud className="w-5 h-5 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+              <img src={awsCloudIcon} alt="AWS Cloud" className="w-10 h-10 object-cover" />
             </div>
             <span className="font-display font-bold text-lg text-foreground">
               Gowtham<span className="text-primary">.</span>
@@ -25,7 +26,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © {currentYear} Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by Gowtham
+            © {currentYear} Made with <img src={awsIcon} alt="AWS" className="w-5 h-5 inline-block" /> by Gowtham
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Cloud } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import awsCloudIcon from '@/assets/aws-cloud-icon.png';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -62,8 +63,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <Cloud className="w-5 h-5 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+              <img src={awsCloudIcon} alt="AWS Cloud" className="w-10 h-10 object-cover" />
             </div>
             <span className="font-display font-bold text-lg text-foreground">
               Gowtham<span className="text-primary">.</span>
@@ -142,3 +143,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
