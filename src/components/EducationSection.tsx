@@ -5,6 +5,7 @@ import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 import kecLogo from '@/assets/kec-logo.jpg';
 import kecCollege from '@/assets/kec-college.jpg';
 import chikkannaLogo from '@/assets/chikkanna-college-logo.png';
+import tnSchoolLogo from '@/assets/tn-school-education-logo.png';
 
 const education = [{
   degree: "Master of Computer Applications (MCA)",
@@ -24,6 +25,26 @@ const education = [{
   status: "Completed",
   description: "Graduated with strong foundation in computer science fundamentals, programming, databases, and software development methodologies.",
   logo: chikkannaLogo,
+  secondaryLogo: null,
+  tagline: null
+}, {
+  degree: "12th Grade (Higher Secondary)",
+  institution: "V K Government Higher Secondary School",
+  location: "Tiruppur, Tamil Nadu",
+  period: "2020 – 2022",
+  status: "Completed",
+  description: "Completed higher secondary education building a strong academic foundation.",
+  logo: tnSchoolLogo,
+  secondaryLogo: null,
+  tagline: null
+}, {
+  degree: "10th Grade (Secondary)",
+  institution: "Government High School",
+  location: "Tiruppur, Tamil Nadu",
+  period: "2019 – 2020",
+  status: "Completed",
+  description: "Completed secondary education with a solid grounding in core subjects.",
+  logo: tnSchoolLogo,
   secondaryLogo: null,
   tagline: null
 }];

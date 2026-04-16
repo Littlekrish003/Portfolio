@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
+import contactBg from '@/assets/contact-bg.jpeg';
 
 const contactInfo = [{
   icon: Mail,
@@ -98,8 +99,12 @@ const ContactSection = () => {
     }
   };
 
-  return <section id="contact" className="py-20 md:py-28 bg-background" ref={ref}>
-      <div className="section-container bg-orange-100">
+  return <section id="contact" className="relative py-20 md:py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 z-0">
+        <img src={contactBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+      </div>
+      <div className="section-container relative z-10">
         <motion.div initial={{
         opacity: 0,
         y: 30
