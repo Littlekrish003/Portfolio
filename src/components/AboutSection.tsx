@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Target, Lightbulb, TrendingUp, Award } from 'lucide-react';
+import aboutBg from '@/assets/about-bg.jpeg';
 const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -25,8 +26,12 @@ const AboutSection = () => {
     title: "Credentials",
     description: "Multiple industry certifications from AWS, Oracle, and ServiceNow"
   }];
-  return <section id="about" className="py-20 md:py-28 bg-card" ref={ref}>
-      <div className="section-container">
+  return <section id="about" className="relative py-20 md:py-28 bg-card overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 z-0">
+        <img src={aboutBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
+      </div>
+      <div className="section-container relative z-10">
         <motion.div initial={{
         opacity: 0,
         y: 30
