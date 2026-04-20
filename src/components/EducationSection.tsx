@@ -26,7 +26,8 @@ const education = [{
   description: "Graduated with strong foundation in computer science fundamentals, programming, databases, and software development methodologies.",
   logo: chikkannaLogo,
   secondaryLogo: null,
-  tagline: null
+  tagline: null,
+  score: "CGPA: 8.596"
 }, {
   degree: "12th Grade (Higher Secondary)",
   institution: "V K Government Higher Secondary School",
@@ -36,7 +37,8 @@ const education = [{
   description: "Completed higher secondary education building a strong academic foundation.",
   logo: tnSchoolLogo,
   secondaryLogo: null,
-  tagline: null
+  tagline: null,
+  score: "76.5%"
 }, {
   degree: "10th Grade (Secondary)",
   institution: "Government High School",
@@ -46,7 +48,8 @@ const education = [{
   description: "Completed secondary education with a solid grounding in core subjects.",
   logo: tnSchoolLogo,
   secondaryLogo: null,
-  tagline: null
+  tagline: null,
+  score: "84%"
 }];
 
 const EducationSection = () => {
@@ -130,6 +133,12 @@ const EducationSection = () => {
                   <MapPin className="w-4 h-4" />
                   {item.location}
                 </div>
+
+                {(item as any).score && (
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+                    {(item as any).score}
+                  </div>
+                )}
 
                 <p className="text-muted-foreground leading-relaxed">
                   {item.description}
