@@ -2,7 +2,7 @@ import awsCloudIcon from '@/assets/aws-cloud-icon.png';
 import awsIcon from '@/assets/aws-icon.png';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="border-t border-border py-12 bg-rose-50">
+  return <footer className="border-t border-border py-12 bg-secondary/40 dark:bg-card/60">
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}

@@ -104,11 +104,11 @@ const AboutSection = () => {
           } : {}} transition={{
             duration: 0.4,
             delay: 0.5 + index * 0.1
-          }} className="p-6 rounded-xl shadow-card card-hover bg-red-50">
-                <div className="w-12 h-12 rounded-lg bg-cloud-100 flex items-center justify-center mb-4">
+          }} whileHover={{ y: -6, scale: 1.02 }} className="group p-6 rounded-xl shadow-card card-hover bg-card/90 dark:bg-card/70 border border-border backdrop-blur-md transition-colors hover:border-primary/40">
+                <div className="w-12 h-12 rounded-lg bg-cloud-100 dark:bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-display font-semibold text-foreground mb-2">
+                <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
