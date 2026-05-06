@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import type { User } from '@supabase/supabase-js';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -55,8 +56,8 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-card/95 backdrop-blur-md shadow-card' 
-          : 'bg-transparent'
+          ? 'bg-card/95 backdrop-blur-md shadow-card border-b border-border' 
+          : 'bg-background/70 dark:bg-background/80 backdrop-blur-md'
       }`}
     >
       <div className="section-container">
@@ -77,7 +78,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="nav-link text-sm font-medium"
+                className="nav-link text-sm font-medium text-foreground/80 hover:text-foreground"
               >
                 {link.name}
               </a>
@@ -85,19 +86,23 @@ const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
             <Button asChild variant="ghost" className="bg-gradient-primary/10 hover:bg-gradient-primary/20 text-foreground hover:text-foreground transition-all">
               <a href="#contact">Get In Touch</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-1">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg hover:bg-secondary transition-colors"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -143,4 +148,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

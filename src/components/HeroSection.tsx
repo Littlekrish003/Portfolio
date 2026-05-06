@@ -200,22 +200,21 @@ const HeroSection = () => {
                 className="group relative overflow-hidden bg-gradient-to-r from-cloud-500 to-cloud-600 hover:from-cloud-600 hover:to-cloud-700 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2 w-full sm:w-auto px-8"
                 asChild
               >
-                <a href="http://resume.myserver.sbs/" target="_blank" rel="noopener noreferrer">
+                <a href="http://resume.myserver.sbs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Eye className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
                   View Resume
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </a>
               </Button>
               
-              <Button size="lg" variant="outline" className="glass border-cloud-200 hover:border-cloud-300 hover:bg-cloud-50/50 gap-2 w-full sm:w-auto px-8 transition-all duration-300" asChild>
-                <a href="#certifications" className="bg-cloud-200">
+              <Button size="lg" variant="outline" className="glass border-cloud-300/60 hover:border-cloud-400 text-foreground hover:bg-cloud-50/50 dark:hover:bg-cloud-900/20 gap-2 w-full sm:w-auto px-8 transition-all duration-300" asChild>
+                <a href="#certifications" className="flex items-center gap-2">
                   <Award className="w-5 h-5" />
                   View Certifications
                 </a>
               </Button>
               
-              <Button size="lg" variant="ghost" className="hover:bg-cloud-50 gap-2 w-full sm:w-auto transition-all duration-300" asChild>
-                <a href="#contact" className="bg-secondary">
+              <Button size="lg" variant="ghost" className="text-foreground hover:bg-cloud-50 dark:hover:bg-cloud-900/20 gap-2 w-full sm:w-auto transition-all duration-300" asChild>
+                <a href="#contact" className="flex items-center gap-2 bg-secondary">
                   <Mail className="w-5 h-5" />
                   Let's Talk
                 </a>
