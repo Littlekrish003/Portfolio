@@ -43,7 +43,7 @@ const TechStackSection = () => {
   });
 
   return (
-    <section ref={ref} className="py-16 border-y border-border bg-lime-50">
+    <section ref={ref} className="py-16 border-y border-border bg-secondary/40 dark:bg-card/50">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,6 +63,7 @@ const TechStackSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 * index }}
+              whileHover={{ y: -4 }}
               className="group flex flex-col items-center gap-3"
             >
               <div
