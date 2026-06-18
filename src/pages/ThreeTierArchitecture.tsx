@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Cloud, Globe, Server, Shield, Database, Scaling, BarChart3, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import AwsArchDiagram, { ArchNode, ArchEdge } from '@/components/AwsArchDiagram';
 
 const architectureSteps = [
   {
@@ -49,6 +50,32 @@ const architectureSteps = [
   },
 ];
 
+const diagramNodes: ArchNode[] = [
+  { id: 'user', x: 6, y: 50, label: 'User', icon: Globe, color: 'from-sky-500 to-sky-600' },
+  { id: 'route53', x: 22, y: 50, label: 'Route 53', sublabel: 'DNS + ACM', icon: Globe, color: 'from-purple-500 to-purple-600' },
+  { id: 'alb', x: 40, y: 50, label: 'ALB', sublabel: 'Load Balancer', icon: Server, color: 'from-orange-500 to-orange-600' },
+  { id: 'ec2a', x: 62, y: 26, label: 'EC2', sublabel: 'AZ-a', icon: Server, color: 'from-amber-500 to-amber-600' },
+  { id: 'ec2b', x: 62, y: 74, label: 'EC2', sublabel: 'AZ-b', icon: Server, color: 'from-amber-500 to-amber-600' },
+  { id: 'rds', x: 86, y: 50, label: 'Amazon RDS', sublabel: 'Multi-AZ', icon: Database, color: 'from-blue-600 to-blue-700' },
+  { id: 'cw', x: 40, y: 8, label: 'CloudWatch', icon: BarChart3, color: 'from-emerald-500 to-emerald-600' },
+  { id: 'iam', x: 86, y: 8, label: 'IAM', icon: Shield, color: 'from-rose-500 to-rose-600' },
+];
+
+const diagramEdges: ArchEdge[] = [
+  { from: 'user', to: 'route53', label: 'HTTPS', delay: 0 },
+  { from: 'route53', to: 'alb', label: 'TLS', delay: 0.4 },
+  { from: 'alb', to: 'ec2a', curve: -0.4, delay: 0.8 },
+  { from: 'alb', to: 'ec2b', curve: 0.4, delay: 1.0 },
+  { from: 'ec2a', to: 'rds', curve: 0.3, delay: 1.4 },
+  { from: 'ec2b', to: 'rds', curve: -0.3, delay: 1.6 },
+  { from: 'cw', to: 'alb', curve: 0.2, delay: 2.0, color: 'hsl(var(--primary) / 0.35)' },
+];
+
+const diagramGroups = [
+  { x: 55, y: 18, w: 16, h: 70, label: 'Auto Scaling Group' },
+  { x: 2, y: 2, w: 96, h: 96, label: 'AWS Cloud · VPC', dashed: false },
+];
+
 const FunFactsArchitecture = () => {
   const navigate = useNavigate();
 
@@ -91,9 +118,21 @@ const FunFactsArchitecture = () => {
           </p>
         </motion.div>
 
+        <div className="max-w-5xl mx-auto mb-12">
+          <AwsArchDiagram
+            nodes={diagramNodes}
+            edges={diagramEdges}
+            groups={diagramGroups}
+            title="Live Data Flow"
+          />
+        </div>
+
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/50 hidden md:block" />
+            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 hidden md:block flow-line">
+              <span className="flow-pulse" style={{ ['--flow-duration' as any]: '5s' }} />
+              <span className="flow-pulse" style={{ ['--flow-duration' as any]: '5s', animationDelay: '2.5s' }} />
+            </div>
             <div className="space-y-6">
               {architectureSteps.map((step, index) => (
                 <motion.div
@@ -104,7 +143,10 @@ const FunFactsArchitecture = () => {
                   className="relative flex items-start gap-6"
                 >
                   <div className="relative z-10 flex-shrink-0">
-                    <div className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${step.color} flex flex-col items-center justify-center shadow-lg`}>
+                    <div
+                      className={`flow-icon w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${step.color} flex flex-col items-center justify-center shadow-lg`}
+                      style={{ ['--flow-delay' as any]: `${index * 0.35}s` }}
+                    >
                       <step.icon className="w-6 h-6 md:w-8 md:h-8 text-white mb-1" />
                       <span className="text-[10px] md:text-xs font-bold text-white/80">Step {step.step}</span>
                     </div>

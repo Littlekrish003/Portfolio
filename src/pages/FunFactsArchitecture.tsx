@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Cloud, Zap, Database, Globe, Brain, Server, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import AwsArchDiagram, { ArchNode, ArchEdge } from '@/components/AwsArchDiagram';
 
 const architectureSteps = [
   {
@@ -56,6 +57,28 @@ const architectureSteps = [
   },
 ];
 
+const diagramNodes: ArchNode[] = [
+  { id: 'user', x: 6, y: 50, label: 'User', icon: Globe, color: 'from-sky-500 to-sky-600' },
+  { id: 'amplify', x: 22, y: 50, label: 'Amplify', sublabel: 'Web App', icon: Cloud, color: 'from-orange-400 to-orange-500' },
+  { id: 'apigw', x: 40, y: 50, label: 'API Gateway', icon: Server, color: 'from-purple-500 to-purple-600' },
+  { id: 'lambda', x: 58, y: 50, label: 'Lambda', icon: Zap, color: 'from-amber-500 to-amber-600' },
+  { id: 'ddb', x: 80, y: 24, label: 'DynamoDB', sublabel: 'Facts', icon: Database, color: 'from-blue-600 to-blue-700' },
+  { id: 'bedrock', x: 80, y: 76, label: 'Bedrock', sublabel: 'Claude AI', icon: Brain, color: 'from-emerald-500 to-emerald-600' },
+];
+
+const diagramEdges: ArchEdge[] = [
+  { from: 'user', to: 'amplify', label: 'HTTPS', delay: 0 },
+  { from: 'amplify', to: 'apigw', label: 'fetch()', delay: 0.4 },
+  { from: 'apigw', to: 'lambda', delay: 0.8 },
+  { from: 'lambda', to: 'ddb', curve: 0.3, label: 'getItem', delay: 1.2 },
+  { from: 'lambda', to: 'bedrock', curve: -0.3, label: 'invoke', delay: 1.4 },
+  { from: 'lambda', to: 'amplify', curve: -0.6, label: 'response', delay: 2.0, color: 'hsl(var(--primary) / 0.45)' },
+];
+
+const diagramGroups = [
+  { x: 2, y: 2, w: 96, h: 96, label: 'AWS Cloud', dashed: false },
+];
+
 const FunFactsArchitecture = () => {
   const navigate = useNavigate();
 
@@ -100,11 +123,23 @@ const FunFactsArchitecture = () => {
           </p>
         </motion.div>
 
+        <div className="max-w-5xl mx-auto mb-12">
+          <AwsArchDiagram
+            nodes={diagramNodes}
+            edges={diagramEdges}
+            groups={diagramGroups}
+            title="Live Data Flow"
+          />
+        </div>
+
         {/* Architecture Flow */}
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Vertical line connector */}
-            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/50 hidden md:block" />
+            {/* Animated vertical flow connector */}
+            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-0.5 hidden md:block flow-line">
+              <span className="flow-pulse" style={{ ['--flow-duration' as any]: '5s' }} />
+              <span className="flow-pulse" style={{ ['--flow-duration' as any]: '5s', animationDelay: '2.5s' }} />
+            </div>
 
             <div className="space-y-6">
               {architectureSteps.map((step, index) => (
@@ -117,7 +152,10 @@ const FunFactsArchitecture = () => {
                 >
                   {/* Step number & icon */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${step.color} flex flex-col items-center justify-center shadow-lg`}>
+                    <div
+                      className={`flow-icon w-16 h-16 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${step.color} flex flex-col items-center justify-center shadow-lg`}
+                      style={{ ['--flow-delay' as any]: `${index * 0.35}s` }}
+                    >
                       <step.icon className="w-6 h-6 md:w-8 md:h-8 text-white mb-1" />
                       <span className="text-[10px] md:text-xs font-bold text-white/80">Step {step.step}</span>
                     </div>
