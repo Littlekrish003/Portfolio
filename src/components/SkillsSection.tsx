@@ -69,12 +69,12 @@ const SkillsSection = () => {
         } : {}} transition={{
           duration: 0.5,
           delay: 0.1 * index
-        }} whileHover={{ y: -6 }} className="group rounded-md p-6 bg-card border-l-4 border-l-accent border-t border-r border-b border-border hover:border-l-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 shadow-sm hover:shadow-[0_8px_24px_-6px_hsl(28_92%_50%/0.35)]">
-              <div className="w-14 h-14 rounded-md flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, hsl(38 92% 55%), hsl(24 92% 48%))' }}>
+        }} whileHover={{ y: -6 }} className="group rounded-xl p-6 bg-card border border-border shadow-card card-hover hover:border-primary/40 hover:shadow-hover transition-all duration-300">
+              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
                 <category.icon className="w-7 h-7 text-white" />
               </div>
               
-              <h3 className="font-display font-semibold text-lg text-foreground mb-4 group-hover:text-accent transition-colors">
+              <h3 className="font-display font-semibold text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
                 {category.title}
               </h3>
               
