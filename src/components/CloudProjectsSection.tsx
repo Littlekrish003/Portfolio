@@ -64,7 +64,7 @@ const cloudProjects = [
     icon: Zap,
     iconGradient: "from-[hsl(150,60%,40%)] to-[hsl(150,70%,30%)]",
     description: "Deployed an AWS Lambda function to serve random cloud fun facts with Amazon Bedrock (Claude AI) integration for witty AI-enhanced responses. A solid foundation for modern serverless applications combining databases, APIs, and Generative AI.",
-    liveUrl: "https://funfacts.myserver.sbs",
+    liveUrl: "https://cloudfunfacts.myserver.sbs",
     architectureUrl: "/funfacts-architecture",
     technologies: ["Lambda", "API Gateway", "DynamoDB", "Bedrock", "Amplify", "IAM", "Route53"],
     features: [
