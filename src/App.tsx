@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import FunFactsArchitecture from "./pages/FunFactsArchitecture";
 import ThreeTierArchitecture from "./pages/ThreeTierArchitecture";
 import ServerlessArchitecture from "./pages/ServerlessArchitecture";
+import KubernetesArchitecture from "./pages/KubernetesArchitecture";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/funfacts-architecture" element={<FunFactsArchitecture />} />
           <Route path="/threetier-architecture" element={<ThreeTierArchitecture />} />
           <Route path="/serverless-architecture" element={<ServerlessArchitecture />} />
+          <Route path="/kubernetes-architecture" element={<KubernetesArchitecture />} />
           <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

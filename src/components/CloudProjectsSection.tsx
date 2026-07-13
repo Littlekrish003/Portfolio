@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3, ExternalLink } from 'lucide-react';
+import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3, ExternalLink, Boxes, RefreshCw, Heart, GitBranch, Lock, Brain, Container, Terminal, Github, Gauge, Workflow } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -12,10 +12,23 @@ const skillBadges = [
   { name: "Lambda", icon: Zap },
   { name: "API Gateway", icon: Network },
   { name: "DynamoDB", icon: Database },
+  { name: "RDS", icon: Database },
   { name: "Auto Scaling", icon: Scaling },
   { name: "Application Load Balancer", icon: Layers },
   { name: "Route53", icon: Globe },
   { name: "CloudWatch", icon: BarChart3 },
+  { name: "ACM", icon: Shield },
+  { name: "IAM", icon: Lock },
+  { name: "Amplify", icon: Cloud },
+  { name: "Bedrock", icon: Brain },
+  { name: "CI/CD", icon: Workflow },
+  { name: "Docker", icon: Container },
+  { name: "Kubernetes", icon: Boxes },
+  { name: "Minikube", icon: Boxes },
+  { name: "Nginx", icon: Server },
+  { name: "Linux", icon: Terminal },
+  { name: "GitHub", icon: Github },
+  { name: "Metrics Server", icon: Gauge },
 ];
 
 const cloudProjects = [
@@ -76,6 +89,28 @@ const cloudProjects = [
       { icon: Shield, text: "Secure IAM roles & permissions" },
     ],
     architecture: ["User", "Amplify", "API Gateway", "Lambda", "DynamoDB", "Bedrock"],
+  },
+  {
+    title: "Kubernetes-Based Application Deployment Platform",
+    subtitle: "Containerization + Kubernetes",
+    date: "July 2026",
+    icon: Boxes,
+    iconGradient: "from-[hsl(219,77%,52%)] to-[hsl(219,77%,42%)]",
+    description: "Designed and deployed a containerized web application on an AWS EC2 instance using Docker, Minikube and Kubernetes. Implemented Kubernetes Deployments and Services with multiple pod replicas, health probes, self-healing, rolling updates, rollback capabilities and Horizontal Pod Autoscaling to demonstrate cloud-native application deployment and orchestration.",
+    liveUrl: "https://github.com/Littlekrish003/kubernetes-deployment-platform",
+    architectureUrl: "/kubernetes-architecture",
+    technologies: ["AWS EC2", "Docker", "Kubernetes", "Minikube", "Nginx", "Linux", "GitHub", "Metrics Server"],
+    features: [
+      { icon: Boxes, text: "Containerized web application using Docker" },
+      { icon: Layers, text: "Kubernetes deployment with multiple pod replicas" },
+      { icon: Network, text: "Application exposure using a NodePort Service" },
+      { icon: Heart, text: "Liveness and readiness health probes" },
+      { icon: Shield, text: "Automatic pod recovery and self-healing" },
+      { icon: RefreshCw, text: "Zero-downtime rolling application updates" },
+      { icon: GitBranch, text: "Deployment rollback to a previous version" },
+      { icon: Scaling, text: "Horizontal Pod Autoscaling" },
+    ],
+    architecture: ["User", "AWS EC2", "Minikube", "NodePort Service", "Application Pods", "Nginx Web App"],
   },
 ];
 
@@ -171,18 +206,6 @@ const CloudProjectsSection = () => {
                 </p>
               </div>
 
-              {/* Technologies */}
-              <div className="px-6 pb-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">Technologies</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground border border-border">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
               {/* Features */}
               <div className="px-6 pb-4">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Key Features</h4>
@@ -194,23 +217,6 @@ const CloudProjectsSection = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Architecture flow */}
-              <div className="mx-6 mb-4 p-4 rounded-xl bg-secondary/50 border border-border">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Architecture Flow</h4>
-                <div className="flex items-center flex-wrap gap-1.5">
-                  {project.architecture.map((step, i) => (
-                    <span key={i} className="flex items-center gap-1.5">
-                      <span className="px-2.5 py-1 bg-card rounded-lg text-xs font-medium text-foreground shadow-sm border border-border/50">
-                        {step}
-                      </span>
-                      {i < project.architecture.length - 1 && (
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground" />
-                      )}
-                    </span>
-                  ))}
-                </div>
               </div>
 
               {/* Action Buttons */}
