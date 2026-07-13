@@ -96,7 +96,7 @@ const FunFactsArchitecture = () => {
             Back to Portfolio
           </Button>
           <Button asChild variant="default" className="bg-gradient-to-r from-primary to-primary/80 gap-2">
-            <a href="https://funfacts.myserver.sbs" target="_blank" rel="noopener noreferrer">
+            <a href="https://cloudfunfacts.myserver.sbs" target="_blank" rel="noopener noreferrer">
               View Live Project
               <ArrowRight className="w-4 h-4" />
             </a>
