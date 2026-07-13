@@ -68,7 +68,7 @@ const Navbar = () => {
               <img src={awsCloudIcon} alt="AWS Cloud" className="w-10 h-10 object-cover" />
             </div>
             <span className="font-display font-bold text-lg text-foreground">
-              Gowtham<span className="text-primary">.</span>
+              Gowtham
             </span>
           </a>
 
@@ -148,3 +148,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
