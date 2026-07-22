@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Eye, Award, Mail, Cloud, Server, Cog, Sparkles, Zap, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import profilePhoto from '@/assets/gow-photo-v2.jpeg';
 const FloatingIcon = ({
   icon: Icon,
   className,
@@ -115,7 +115,7 @@ const HeroSection = () => {
                 scale: 1.05
               }} transition={{
                 duration: 0.4
-              }} src="https://i.postimg.cc/0rgGRwMf/Gow-photo.jpg" />
+              }} src={profilePhoto.url} />
               </div>
               
               {/* Gradient border overlay */}

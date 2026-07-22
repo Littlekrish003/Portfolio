@@ -50,6 +50,20 @@ const featuredCerts = [
     badge: cambridgeBadge,
     verifyUrl: "/certificates/cambridge-english.pdf",
     validationNumber: "ENG_255737"
+  },
+  {
+    name: "AWS DevOps Job Readiness Assessment",
+    issuer: "Amazon Web Services",
+    validity: "2025",
+    verifyUrl: "https://drive.google.com/file/d/1osbSovGQvtVtY3qWwaLti2Tho3a1DAR4/view?usp=drive_link",
+    validationNumber: "AWS-DEVOPS-JRA-2025"
+  },
+  {
+    name: "AI: Knowledge Representation and Reasoning",
+    issuer: "NPTEL Online Certification",
+    validity: "2025",
+    verifyUrl: "https://drive.google.com/file/d/1ugl7X_eQx9PxzK2dhxSQ-nsE-Sc3Vbin/view?usp=drive_link",
+    validationNumber: "NPTEL-AI-KRR-2025"
   }
 ];
 
@@ -86,31 +100,6 @@ const certifications = [{
     validity: "2024"
   }]
 }, {
-  category: "ServiceNow",
-  color: "bg-gradient-to-br from-green-500 to-emerald-700",
-  certs: [{
-    name: "Welcome to ServiceNow",
-    validity: "2024"
-  }, {
-    name: "Flow Designer",
-    validity: "2024"
-  }, {
-    name: "Service Portal",
-    validity: "2024"
-  }, {
-    name: "Introduction to App Engine Studio",
-    validity: "2024"
-  }, {
-    name: "Now Assist Executive",
-    validity: "2024"
-  }, {
-    name: "Now Assist for ITSM Implementation",
-    validity: "2024"
-  }, {
-    name: "Service Bridge Delivery Accreditation",
-    validity: "2024"
-  }]
-}, {
   category: "IBM",
   color: "bg-gradient-to-br from-blue-500 to-blue-700",
   certs: [{
@@ -130,6 +119,59 @@ const certifications = [{
   certs: [{
     name: "English Proficiency Level B1",
     validity: "Reading, Writing, Listening"
+  }]
+}, {
+  category: "Redrob.AI",
+  color: "bg-gradient-to-br from-red-500 to-rose-700",
+  certs: [{
+    name: "Web and App Development",
+    validity: "2026",
+    verifyUrl: "https://skills.redrob.ai/verify/82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09"
+  }, {
+    name: "SQL and Databases",
+    validity: "2026",
+    verifyUrl: "https://skills.redrob.ai/verify/5e00395d-d884-435c-8aad-0dd1fcad66e3"
+  }, {
+    name: "Cloud and Cybersecurity Basics",
+    validity: "2026",
+    verifyUrl: "https://skills.redrob.ai/verify/b91762f4-5481-48b0-ba05-71b9f622e4aa"
+  }]
+}, {
+  category: "NETGEAR Academy",
+  color: "bg-gradient-to-br from-slate-500 to-slate-700",
+  certs: [{
+    name: "Advanced Wireless Networking Expert",
+    validity: "2026",
+    verifyUrl: "https://drive.google.com/file/d/1c_6CX5tG9CGYXOgNdbHsFHovR4rFfgw5/view?usp=drive_link"
+  }, {
+    name: "Advanced Wired Networking Expert",
+    validity: "2026",
+    verifyUrl: "https://drive.google.com/file/d/1QLa-ilg9VzoMmc3mGhUFTbfgUrLzESk7/view?usp=drive_link"
+  }, {
+    name: "Advanced Insight Cloud Expert",
+    validity: "2026",
+    verifyUrl: "https://drive.google.com/file/d/1ee_emuBeE0GDMlqxmq8SOqiIwqwwWBIS/view?usp=drive_link"
+  }, {
+    name: "NETGEAR Certified Engineer (NCE)",
+    validity: "2026",
+    verifyUrl: "https://drive.google.com/file/d/1hxG97g_ETdQ4LzEOFybhjPZBy9hdIST9/view?usp=drive_link"
+  }, {
+    name: "NETGEAR AV Certification Level 1",
+    validity: "2026",
+    verifyUrl: "https://drive.google.com/file/d/15lBXdh-yON6ScqbWwBRv5uwQLyof59m2/view?usp=drive_link"
+  }]
+}, {
+  category: "ServiceNow",
+  color: "bg-gradient-to-br from-green-500 to-emerald-700",
+  certs: [{
+    name: "Introduction to App Engine Studio",
+    validity: "2024"
+  }, {
+    name: "Now Assist for ITSM Implementation",
+    validity: "2024"
+  }, {
+    name: "Service Bridge Delivery Accreditation",
+    validity: "2024"
   }]
 }];
 const CertificationsSection = () => {
@@ -168,7 +210,7 @@ const CertificationsSection = () => {
             <BadgeCheck className="w-5 h-5 text-primary" />
             Featured Certifications
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
             {featuredCerts.map((cert, index) => (
               <motion.a
                 key={cert.name}
@@ -179,7 +221,7 @@ const CertificationsSection = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -4 }}
-                className="group relative bg-gradient-to-br from-card to-secondary/30 border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer overflow-hidden"
+                className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md bg-gradient-to-br from-card to-secondary/30 border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer overflow-hidden"
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -246,7 +288,7 @@ const CertificationsSection = () => {
             <img src={servicenowLogo} alt="ServiceNow" className="w-6 h-6 object-contain" />
             ServiceNow Micro-Certifications
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {servicenowMicroCerts.map((cert, index) => (
               <motion.div
                 key={cert.name}
@@ -254,7 +296,7 @@ const CertificationsSection = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="group bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-xl p-4 text-center hover:border-green-500/50 transition-all cursor-default"
+                className="group flex-1 min-w-[140px] max-w-[180px] bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-xl p-4 text-center hover:border-green-500/50 transition-all cursor-default"
               >
                 <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                   <BadgeCheck className="w-5 h-5 text-white" />
@@ -276,7 +318,7 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + 0.1 * groupIndex }}
-              className="bg-gradient-to-br from-card to-secondary/20 border border-border/50 rounded-xl p-6 shadow-card hover:shadow-lg transition-all"
+              className="h-full flex flex-col bg-gradient-to-br from-card to-secondary/20 border border-border/50 rounded-xl p-6 shadow-card hover:shadow-lg transition-all"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-5">
@@ -309,6 +351,17 @@ const CertificationsSection = () => {
                       <Calendar className="w-3 h-3" />
                       {cert.validity}
                     </div>
+                    {cert.verifyUrl && (
+                      <a
+                        href={cert.verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 mt-2 text-xs font-medium text-primary hover:underline"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        View Certificate
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -325,7 +378,7 @@ const CertificationsSection = () => {
         >
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-6 py-3 rounded-full shadow-lg">
             <Award className="w-5 h-5" />
-            <span className="font-semibold">15+ Verified Certifications</span>
+            <span className="font-semibold">25+ Verified Certifications</span>
           </div>
         </motion.div>
       </div>
