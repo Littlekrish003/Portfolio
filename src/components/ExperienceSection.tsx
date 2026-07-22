@@ -89,7 +89,7 @@ const ExperienceSection = () => {
                 <p className="text-sm text-muted-foreground mb-3">Technologies Used:</p>
                 <div className="flex flex-wrap gap-2">
                   {['Full Stack Development', 'UiPath RPA', 'Process Automation', 'Bot Development'].map((skill) => (
-                    <span key={skill} className="skill-badge">
+                    <span key={skill} className="skill-badge skill-badge-blue">
                       {skill}
                     </span>
                   ))}
