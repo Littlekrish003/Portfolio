@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Eye, Award, Mail, Cloud, Server, Cog, Sparkles, Zap, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profilePhoto from '@/assets/gow-photo-v2.jpeg';
+import profilePhoto from '@/assets/gow-photo-v2.jpeg.asset.json';
 const FloatingIcon = ({
   icon: Icon,
   className,
