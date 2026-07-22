@@ -79,7 +79,7 @@ const SkillsSection = () => {
               </h3>
               
               <div className="flex flex-wrap gap-2">
-                {category.skills.map(skill => <span key={skill} className="skill-badge skill-badge-blue text-xs">
+                {category.skills.map(skill => <span key={skill} className="skill-badge text-xs">
                     {skill}
                   </span>)}
               </div>

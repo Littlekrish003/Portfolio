@@ -221,41 +221,28 @@
 
   .skill-badge {
     @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200;
-    background: linear-gradient(135deg, hsl(38 92% 95%), hsl(28 95% 90%));
-    color: hsl(24 90% 38%);
-    border: 1px solid hsl(32 90% 80%);
+    background: linear-gradient(135deg, hsl(201 100% 97%), hsl(201 94% 92%));
+    color: hsl(201 96% 28%);
+    border: 1px solid hsl(201 94% 82%);
   }
 
   .skill-badge:hover {
-    background: linear-gradient(135deg, hsl(32 95% 88%), hsl(22 95% 82%));
-    border-color: hsl(28 92% 60%);
+    background: linear-gradient(135deg, hsl(201 94% 90%), hsl(201 94% 84%));
+    border-color: hsl(201 96% 50%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px -4px hsl(28 92% 50% / 0.35);
-  }
-
-  .skill-badge-blue {
-    background: linear-gradient(135deg, hsl(207 95% 92%), hsl(205 90% 88%));
-    color: hsl(215 92% 22%);
-    border: 1px solid hsl(205 90% 75%);
-  }
-
-  .skill-badge-blue:hover {
-    background: linear-gradient(135deg, hsl(205 95% 86%), hsl(206 95% 82%));
-    border-color: hsl(205 90% 55%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px -4px hsl(205 92% 50% / 0.35);
+    box-shadow: 0 6px 16px -4px hsl(201 96% 40% / 0.35);
   }
 
   .dark .skill-badge {
-    background: linear-gradient(135deg, hsl(28 60% 18%), hsl(20 70% 14%));
-    color: hsl(32 95% 70%);
-    border: 1px solid hsl(28 60% 30%);
+    background: linear-gradient(135deg, hsl(217 33% 18%), hsl(222 47% 14%));
+    color: hsl(201 94% 78%);
+    border: 1px solid hsl(201 50% 32%);
   }
 
   .dark .skill-badge:hover {
-    background: linear-gradient(135deg, hsl(28 70% 24%), hsl(20 80% 18%));
-    border-color: hsl(32 92% 55%);
-    box-shadow: 0 6px 16px -4px hsl(28 92% 50% / 0.4);
+    background: linear-gradient(135deg, hsl(217 40% 22%), hsl(222 47% 18%));
+    border-color: hsl(201 94% 60%);
+    box-shadow: 0 6px 16px -4px hsl(201 94% 50% / 0.4);
   }
 
   .cert-card {
@@ -475,5 +462,63 @@
   * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* ============================================
+   Architecture Flow Animations
+   ============================================ */
+@layer utilities {
+  @keyframes flow-travel {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  @keyframes flow-line-shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 200%; }
+  }
+
+  @keyframes flow-icon-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 10px 20px -10px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      transform: scale(1.08);
+      box-shadow: 0 0 0 8px hsl(var(--primary) / 0.15), 0 14px 28px -8px hsl(var(--primary) / 0.55);
+    }
+  }
+
+  .flow-line {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary) / 0.15) 0%,
+      hsl(var(--primary) / 0.85) 25%,
+      hsl(var(--primary) / 0.15) 50%,
+      hsl(var(--primary) / 0.85) 75%,
+      hsl(var(--primary) / 0.15) 100%
+    );
+    background-size: 100% 200%;
+    animation: flow-line-shift 4s linear infinite;
+  }
+
+  .flow-pulse {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 16px 4px hsl(var(--primary) / 0.6);
+    animation: flow-travel var(--flow-duration, 6s) linear infinite;
+  }
+
+  .flow-icon {
+    animation: flow-icon-pulse 2.4s ease-in-out infinite;
+    animation-delay: var(--flow-delay, 0s);
   }
 }
