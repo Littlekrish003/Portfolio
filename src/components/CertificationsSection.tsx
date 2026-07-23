@@ -8,6 +8,8 @@ import servicenowLogo from '@/assets/servicenow-logo.jpeg';
 import uipathBadge from '@/assets/uipath-badge.png';
 import ibmBadge from '@/assets/ibm-badge.png';
 import cambridgeBadge from '@/assets/cambridge-badge.png';
+import awsDevopsJraCert from '@/assets/aws-devops-jra-cert.png';
+import nptelAiKrrCert from '@/assets/nptel-ai-krr-cert.png';
 
 // Featured certifications with badges
 const featuredCerts = [
@@ -16,7 +18,7 @@ const featuredCerts = [
     issuer: "Amazon Web Services",
     validity: "2025–2028",
     badge: awsBadge,
-    verifyUrl: "https://aws.amazon.com/verification",
+    verifyUrl: "https://drive.google.com/file/d/1shWnOHmbh6OeDH3Xq-jjjuCFFRc932HE/view?usp=drive_link",
     validationNumber: "bd466f69b40646d28546a031286beb46"
   },
   {
@@ -24,7 +26,7 @@ const featuredCerts = [
     issuer: "Oracle University",
     validity: "2025–2027",
     badge: oracleCert,
-    verifyUrl: "https://catalog-education.oracle.com",
+    verifyUrl: "https://drive.google.com/file/d/1FlTKxrt-7IBw2usC_l8rAuL8IQwSv--O/view?usp=drive_link",
     validationNumber: "309793847OCI25FNDCFA"
   },
   {
@@ -32,7 +34,7 @@ const featuredCerts = [
     issuer: "UiPath Academy",
     validity: "Naan Mudhalvan Program",
     badge: uipathBadge,
-    verifyUrl: "#",
+    verifyUrl: "https://drive.google.com/file/d/1eT7KqfQjYIMo5ODh6CmY-3sl8ueHkFIV/view?usp=sharing",
     validationNumber: "NM-RPA-2024"
   },
   {
@@ -40,7 +42,7 @@ const featuredCerts = [
     issuer: "IBM SkillsBuild",
     validity: "Feb 2025",
     badge: ibmBadge,
-    verifyUrl: "https://www.credly.com/badges/162ac569-e26e-4ce7-8357-c9f081b046bc",
+    verifyUrl: "https://drive.google.com/file/d/179YDLvg0xIV2pNDPYcCFL7i5Fu3JWics/view?usp=sharing",
     validationNumber: "162ac569-e26e-4ce7-8357-c9f081b046bc"
   },
   {
@@ -54,14 +56,16 @@ const featuredCerts = [
   {
     name: "AWS DevOps Job Readiness Assessment",
     issuer: "Amazon Web Services",
-    validity: "2025",
+    validity: "2026",
+    badge: awsDevopsJraCert.url,
     verifyUrl: "https://drive.google.com/file/d/1osbSovGQvtVtY3qWwaLti2Tho3a1DAR4/view?usp=drive_link",
     validationNumber: "AWS-DEVOPS-JRA-2025"
   },
   {
     name: "AI: Knowledge Representation and Reasoning",
     issuer: "NPTEL Online Certification",
-    validity: "2025",
+    validity: "2026",
+    badge: nptelAiKrrCert.url,
     verifyUrl: "https://drive.google.com/file/d/1ugl7X_eQx9PxzK2dhxSQ-nsE-Sc3Vbin/view?usp=drive_link",
     validationNumber: "NPTEL-AI-KRR-2025"
   }
@@ -74,53 +78,13 @@ const servicenowMicroCerts = [
   { name: "Automated Test Framework", issued: "Jan 19, 2025" },
   { name: "Predictive Intelligence", issued: "Jan 25, 2025" },
   { name: "Now Assist Executive", issued: "Jan 25, 2025" },
-  { name: "Service Portal", issued: "Mar 5, 2025" }
+  { name: "Service Portal", issued: "Mar 5, 2025" },
+  { name: "Introduction to App Engine Studio", issued: "2024" },
+  { name: "Now Assist for ITSM Implementation", issued: "2024" },
+  { name: "Service Bridge Delivery Accreditation", issued: "2024" }
 ];
 
 const certifications = [{
-  category: "Amazon Web Services",
-  color: "bg-gradient-to-br from-orange-400 to-amber-600",
-  certs: [{
-    name: "AWS Certified Cloud Practitioner",
-    validity: "2025–2028",
-    highlight: true
-  }, {
-    name: "AWS Academy Graduate – Cloud Foundations",
-    validity: "2025"
-  }]
-}, {
-  category: "Oracle",
-  color: "bg-gradient-to-br from-red-500 to-red-700",
-  certs: [{
-    name: "OCI Certified Foundations Associate",
-    validity: "2025–2027",
-    highlight: true
-  }, {
-    name: "Oracle Cloud Infrastructure Architecture",
-    validity: "2024"
-  }]
-}, {
-  category: "IBM",
-  color: "bg-gradient-to-br from-blue-500 to-blue-700",
-  certs: [{
-    name: "Getting Started with Artificial Intelligence",
-    validity: "2024"
-  }]
-}, {
-  category: "UiPath",
-  color: "bg-gradient-to-br from-orange-500 to-orange-700",
-  certs: [{
-    name: "Robotic Process Automation Foundation",
-    validity: "Naan Mudhalvan Program"
-  }]
-}, {
-  category: "Cambridge English",
-  color: "bg-gradient-to-br from-purple-500 to-purple-700",
-  certs: [{
-    name: "English Proficiency Level B1",
-    validity: "Reading, Writing, Listening"
-  }]
-}, {
   category: "Redrob.AI",
   color: "bg-gradient-to-br from-red-500 to-rose-700",
   certs: [{
@@ -159,19 +123,6 @@ const certifications = [{
     name: "NETGEAR AV Certification Level 1",
     validity: "2026",
     verifyUrl: "https://drive.google.com/file/d/15lBXdh-yON6ScqbWwBRv5uwQLyof59m2/view?usp=drive_link"
-  }]
-}, {
-  category: "ServiceNow",
-  color: "bg-gradient-to-br from-green-500 to-emerald-700",
-  certs: [{
-    name: "Introduction to App Engine Studio",
-    validity: "2024"
-  }, {
-    name: "Now Assist for ITSM Implementation",
-    validity: "2024"
-  }, {
-    name: "Service Bridge Delivery Accreditation",
-    validity: "2024"
   }]
 }];
 const CertificationsSection = () => {
@@ -310,15 +261,15 @@ const CertificationsSection = () => {
           </div>
         </motion.div>
 
-        {/* Other Certifications Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Other Certifications Grid - masonry columns to avoid blank space */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
           {certifications.map((group, groupIndex) => (
             <motion.div
               key={group.category}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + 0.1 * groupIndex }}
-              className="h-full flex flex-col bg-gradient-to-br from-card to-secondary/20 border border-border/50 rounded-xl p-6 shadow-card hover:shadow-lg transition-all"
+              className="mb-6 break-inside-avoid bg-gradient-to-br from-card to-secondary/20 border border-border/50 rounded-xl p-6 shadow-card hover:shadow-lg transition-all"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-5">
@@ -335,17 +286,12 @@ const CertificationsSection = () => {
                 {group.certs.map((cert, certIndex) => (
                   <li
                     key={certIndex}
-                    className={`p-3 rounded-lg transition-all ${
-                      cert.highlight
-                        ? 'bg-primary/10 border border-primary/20 hover:bg-primary/15'
-                        : 'bg-secondary/50 hover:bg-secondary border border-transparent'
-                    }`}
+                    className="p-3 rounded-lg transition-all bg-secondary/50 hover:bg-secondary border border-transparent"
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <span className={`text-sm font-medium ${cert.highlight ? 'text-primary' : 'text-foreground'}`}>
+                      <span className="text-sm font-medium text-foreground">
                         {cert.name}
                       </span>
-                      {cert.highlight && <BadgeCheck className="w-4 h-4 text-primary flex-shrink-0" />}
                     </div>
                     <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
                       <Calendar className="w-3 h-3" />
