@@ -10,6 +10,15 @@ import ibmBadge from '@/assets/ibm-badge.png';
 import cambridgeBadge from '@/assets/cambridge-badge.png';
 import awsDevopsJraCert from '@/assets/aws-devops-jra-cert.png';
 import nptelAiKrrCert from '@/assets/nptel-ai-krr-cert.png';
+import snWelcome from '@/assets/servicenow/welcome-to-servicenow.pdf';
+import snFlowDesigner from '@/assets/servicenow/flow-designer.pdf';
+import snAtf from '@/assets/servicenow/automated-test-framework.pdf';
+import snPi from '@/assets/servicenow/predictive-intelligence.pdf';
+import snNowAssist from '@/assets/servicenow/now-assist-executive.pdf';
+import snServicePortal from '@/assets/servicenow/service-portal.pdf';
+import snAes from '@/assets/servicenow/intro-app-engine-studio.pdf';
+import snItsm from '@/assets/servicenow/now-assist-itsm.pdf';
+import snServiceBridge from '@/assets/servicenow/service-bridge-delivery.pdf';
 
 // Featured certifications with badges
 const featuredCerts = [
@@ -57,7 +66,7 @@ const featuredCerts = [
     name: "AWS DevOps Job Readiness Assessment",
     issuer: "Amazon Web Services",
     validity: "2026",
-    badge: awsDevopsJraCert.url,
+    badge: awsDevopsJraCert,
     verifyUrl: "https://drive.google.com/file/d/1osbSovGQvtVtY3qWwaLti2Tho3a1DAR4/view?usp=drive_link",
     validationNumber: "AWS-DEVOPS-JRA-2025"
   },
@@ -65,7 +74,7 @@ const featuredCerts = [
     name: "AI: Knowledge Representation and Reasoning",
     issuer: "NPTEL Online Certification",
     validity: "2026",
-    badge: nptelAiKrrCert.url,
+    badge: nptelAiKrrCert,
     verifyUrl: "https://drive.google.com/file/d/1ugl7X_eQx9PxzK2dhxSQ-nsE-Sc3Vbin/view?usp=drive_link",
     validationNumber: "NPTEL-AI-KRR-2025"
   }
@@ -73,15 +82,15 @@ const featuredCerts = [
 
 // ServiceNow Micro-Certifications
 const servicenowMicroCerts = [
-  { name: "Welcome to ServiceNow", issued: "Dec 21, 2024" },
-  { name: "Flow Designer", issued: "Jan 20, 2025" },
-  { name: "Automated Test Framework", issued: "Jan 19, 2025" },
-  { name: "Predictive Intelligence", issued: "Jan 25, 2025" },
-  { name: "Now Assist Executive", issued: "Jan 25, 2025" },
-  { name: "Service Portal", issued: "Mar 5, 2025" },
-  { name: "Introduction to App Engine Studio", issued: "2024" },
-  { name: "Now Assist for ITSM Implementation", issued: "2024" },
-  { name: "Service Bridge Delivery Accreditation", issued: "2024" }
+  { name: "Welcome to ServiceNow", issued: "Dec 21, 2024", url: snWelcome },
+  { name: "Flow Designer", issued: "Jan 20, 2025", url: snFlowDesigner },
+  { name: "Automated Test Framework", issued: "Jan 19, 2025", url: snAtf },
+  { name: "Predictive Intelligence", issued: "Jan 25, 2025", url: snPi },
+  { name: "Now Assist Executive", issued: "Jan 25, 2025", url: snNowAssist },
+  { name: "Service Portal", issued: "Mar 5, 2025", url: snServicePortal },
+  { name: "Introduction to App Engine Studio", issued: "2024", url: snAes },
+  { name: "Now Assist for ITSM Implementation", issued: "2024", url: snItsm },
+  { name: "Service Bridge Delivery Accreditation", issued: "2024", url: snServiceBridge }
 ];
 
 const certifications = [{
@@ -89,40 +98,61 @@ const certifications = [{
   color: "bg-gradient-to-br from-red-500 to-rose-700",
   certs: [{
     name: "Web and App Development",
+    issuer: "Redrob.AI",
     validity: "2026",
-    verifyUrl: "https://skills.redrob.ai/verify/82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09"
+    verifyUrl: "https://skills.redrob.ai/verify/82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09",
+    validationNumber: "82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09"
   }, {
     name: "SQL and Databases",
+    issuer: "Redrob.AI",
     validity: "2026",
-    verifyUrl: "https://skills.redrob.ai/verify/5e00395d-d884-435c-8aad-0dd1fcad66e3"
+    verifyUrl: "https://skills.redrob.ai/verify/5e00395d-d884-435c-8aad-0dd1fcad66e3",
+    validationNumber: "5e00395d-d884-435c-8aad-0dd1fcad66e3"
   }, {
     name: "Cloud and Cybersecurity Basics",
+    issuer: "Redrob.AI",
     validity: "2026",
-    verifyUrl: "https://skills.redrob.ai/verify/b91762f4-5481-48b0-ba05-71b9f622e4aa"
+    verifyUrl: "https://skills.redrob.ai/verify/b91762f4-5481-48b0-ba05-71b9f622e4aa",
+    validationNumber: "b91762f4-5481-48b0-ba05-71b9f622e4aa"
   }]
 }, {
   category: "NETGEAR Academy",
   color: "bg-gradient-to-br from-slate-500 to-slate-700",
   certs: [{
     name: "Advanced Wireless Networking Expert",
+    issuer: "NETGEAR Academy",
     validity: "2026",
-    verifyUrl: "https://drive.google.com/file/d/1c_6CX5tG9CGYXOgNdbHsFHovR4rFfgw5/view?usp=drive_link"
+    verifyUrl: "https://drive.google.com/file/d/1c_6CX5tG9CGYXOgNdbHsFHovR4rFfgw5/view?usp=drive_link",
+    previewUrl: "https://drive.google.com/thumbnail?id=1c_6CX5tG9CGYXOgNdbHsFHovR4rFfgw5&sz=w800",
+    validationNumber: "NETGEAR-AWNE-2026"
   }, {
     name: "Advanced Wired Networking Expert",
+    issuer: "NETGEAR Academy",
     validity: "2026",
-    verifyUrl: "https://drive.google.com/file/d/1QLa-ilg9VzoMmc3mGhUFTbfgUrLzESk7/view?usp=drive_link"
+    verifyUrl: "https://drive.google.com/file/d/1QLa-ilg9VzoMmc3mGhUFTbfgUrLzESk7/view?usp=drive_link",
+    previewUrl: "https://drive.google.com/thumbnail?id=1QLa-ilg9VzoMmc3mGhUFTbfgUrLzESk7&sz=w800",
+    validationNumber: "NETGEAR-AWDE-2026"
   }, {
     name: "Advanced Insight Cloud Expert",
+    issuer: "NETGEAR Academy",
     validity: "2026",
-    verifyUrl: "https://drive.google.com/file/d/1ee_emuBeE0GDMlqxmq8SOqiIwqwwWBIS/view?usp=drive_link"
+    verifyUrl: "https://drive.google.com/file/d/1ee_emuBeE0GDMlqxmq8SOqiIwqwwWBIS/view?usp=drive_link",
+    previewUrl: "https://drive.google.com/thumbnail?id=1ee_emuBeE0GDMlqxmq8SOqiIwqwwWBIS&sz=w800",
+    validationNumber: "NETGEAR-AICE-2026"
   }, {
     name: "NETGEAR Certified Engineer (NCE)",
+    issuer: "NETGEAR Academy",
     validity: "2026",
-    verifyUrl: "https://drive.google.com/file/d/1hxG97g_ETdQ4LzEOFybhjPZBy9hdIST9/view?usp=drive_link"
+    verifyUrl: "https://drive.google.com/file/d/1hxG97g_ETdQ4LzEOFybhjPZBy9hdIST9/view?usp=drive_link",
+    previewUrl: "https://drive.google.com/thumbnail?id=1hxG97g_ETdQ4LzEOFybhjPZBy9hdIST9&sz=w800",
+    validationNumber: "NETGEAR-NCE-2026"
   }, {
     name: "NETGEAR AV Certification Level 1",
+    issuer: "NETGEAR Academy",
     validity: "2026",
-    verifyUrl: "https://drive.google.com/file/d/15lBXdh-yON6ScqbWwBRv5uwQLyof59m2/view?usp=drive_link"
+    verifyUrl: "https://drive.google.com/file/d/15lBXdh-yON6ScqbWwBRv5uwQLyof59m2/view?usp=drive_link",
+    previewUrl: "https://drive.google.com/thumbnail?id=15lBXdh-yON6ScqbWwBRv5uwQLyof59m2&sz=w800",
+    validationNumber: "NETGEAR-AV1-2026"
   }]
 }];
 const CertificationsSection = () => {
@@ -241,13 +271,16 @@ const CertificationsSection = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {servicenowMicroCerts.map((cert, index) => (
-              <motion.div
+              <motion.a
                 key={cert.name}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="group flex-1 min-w-[140px] max-w-[180px] bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-xl p-4 text-center hover:border-green-500/50 transition-all cursor-default"
+                className="group flex-1 min-w-[140px] max-w-[180px] bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-xl p-4 text-center hover:border-green-500/50 transition-all cursor-pointer"
               >
                 <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
                   <BadgeCheck className="w-5 h-5 text-white" />
@@ -256,64 +289,85 @@ const CertificationsSection = () => {
                   {cert.name}
                 </h4>
                 <p className="text-[10px] text-muted-foreground">{cert.issued}</p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>
 
-        {/* Other Certifications Grid - masonry columns to avoid blank space */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
-          {certifications.map((group, groupIndex) => (
-            <motion.div
-              key={group.category}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + 0.1 * groupIndex }}
-              className="mb-6 break-inside-avoid bg-gradient-to-br from-card to-secondary/20 border border-border/50 rounded-xl p-6 shadow-card hover:shadow-lg transition-all"
-            >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-5">
-                <div className={`w-12 h-12 rounded-xl ${group.color} flex items-center justify-center shadow-lg`}>
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="font-display font-bold text-foreground">
-                  {group.category}
-                </h3>
-              </div>
-
-              {/* Certifications List */}
-              <ul className="space-y-3">
-                {group.certs.map((cert, certIndex) => (
-                  <li
-                    key={certIndex}
-                    className="p-3 rounded-lg transition-all bg-secondary/50 hover:bg-secondary border border-transparent"
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-sm font-medium text-foreground">
+        {/* Other Certifications - card style matching Featured */}
+        {certifications.map((group, groupIndex) => (
+          <motion.div
+            key={group.category}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.35 + 0.1 * groupIndex }}
+            className="mb-12"
+          >
+            <h3 className="text-center text-lg font-semibold text-foreground mb-8 flex items-center justify-center gap-2">
+              <Award className="w-5 h-5 text-primary" />
+              {group.category} Certifications
+            </h3>
+            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+              {group.certs.map((cert, certIndex) => (
+                <motion.a
+                  key={cert.name}
+                  href={cert.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + certIndex * 0.08 }}
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md bg-gradient-to-br from-card to-secondary/30 border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="relative flex items-center gap-5">
+                    <div className="flex-shrink-0">
+                      {(cert as any).previewUrl ? (
+                        <img
+                          src={(cert as any).previewUrl}
+                          alt={`${cert.name} certificate`}
+                          loading="lazy"
+                          className="w-24 h-24 object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform bg-muted"
+                        />
+                      ) : (
+                        <div className={`w-24 h-24 rounded-xl ${group.color} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform`}>
+                          <Award className="w-12 h-12 text-white drop-shadow" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                          Verified
+                        </span>
+                      </div>
+                      <h4 className="font-bold text-foreground text-lg leading-tight mb-1 group-hover:text-primary transition-colors">
                         {cert.name}
-                      </span>
+                      </h4>
+                      <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
+                      <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {cert.validity}
+                        </span>
+                        <span className="flex items-center gap-1 text-primary">
+                          <ExternalLink className="w-3 h-3" />
+                          Verify
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5 mt-1.5 text-xs text-muted-foreground">
-                      <Calendar className="w-3 h-3" />
-                      {cert.validity}
-                    </div>
-                    {cert.verifyUrl && (
-                      <a
-                        href={cert.verifyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 mt-2 text-xs font-medium text-primary hover:underline"
-                      >
-                        <ExternalLink className="w-3 h-3" />
-                        View Certificate
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-border/50">
+                    <p className="text-xs text-muted-foreground font-mono truncate">
+                      ID: {cert.validationNumber}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        ))}
 
         {/* Badge count */}
         <motion.div
