@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Award, ExternalLink, Calendar, BadgeCheck, FileText } from 'lucide-react';
+import { Award, Calendar, BadgeCheck, FileText } from 'lucide-react';
 import awsBadge from '@/assets/aws-badge.png';
 import oracleCert from '@/assets/oracle-cert.jpg';
 import servicenowLogo from '@/assets/servicenow-logo.jpeg';
@@ -19,6 +19,9 @@ import snServicePortal from '@/assets/servicenow/service-portal.pdf';
 import snAes from '@/assets/servicenow/intro-app-engine-studio.pdf';
 import snItsm from '@/assets/servicenow/now-assist-itsm.pdf';
 import snServiceBridge from '@/assets/servicenow/service-bridge-delivery.pdf';
+import redrobWebapp from '@/assets/redrob/redrob-webapp.png';
+import redrobSql from '@/assets/redrob/redrob-sql.png';
+import redrobCloud from '@/assets/redrob/redrob-cloud.png';
 
 // Featured certifications with badges
 const featuredCerts = [
@@ -101,18 +104,21 @@ const certifications = [{
     issuer: "Redrob.AI",
     validity: "2026",
     verifyUrl: "https://skills.redrob.ai/verify/82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09",
+    previewUrl: redrobWebapp,
     validationNumber: "82c6b0ef-9ca5-4354-8ef8-cf6223cbbb09"
   }, {
     name: "SQL and Databases",
     issuer: "Redrob.AI",
     validity: "2026",
     verifyUrl: "https://skills.redrob.ai/verify/5e00395d-d884-435c-8aad-0dd1fcad66e3",
+    previewUrl: redrobSql,
     validationNumber: "5e00395d-d884-435c-8aad-0dd1fcad66e3"
   }, {
     name: "Cloud and Cybersecurity Basics",
     issuer: "Redrob.AI",
     validity: "2026",
     verifyUrl: "https://skills.redrob.ai/verify/b91762f4-5481-48b0-ba05-71b9f622e4aa",
+    previewUrl: redrobCloud,
     validationNumber: "b91762f4-5481-48b0-ba05-71b9f622e4aa"
   }]
 }, {
@@ -239,10 +245,6 @@ const CertificationsSection = () => {
                         <Calendar className="w-3 h-3" />
                         {cert.validity}
                       </span>
-                      <span className="flex items-center gap-1 text-primary">
-                        <ExternalLink className="w-3 h-3" />
-                        {cert.verifyUrl.endsWith('.pdf') ? 'View PDF' : 'Verify'}
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -350,10 +352,6 @@ const CertificationsSection = () => {
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
                           {cert.validity}
-                        </span>
-                        <span className="flex items-center gap-1 text-primary">
-                          <ExternalLink className="w-3 h-3" />
-                          Verify
                         </span>
                       </div>
                     </div>
