@@ -11,6 +11,7 @@ import ThreeTierArchitecture from "./pages/ThreeTierArchitecture";
 import ServerlessArchitecture from "./pages/ServerlessArchitecture";
 import KubernetesArchitecture from "./pages/KubernetesArchitecture";
 import FileSharingArchitecture from "./pages/FileSharingArchitecture";
+import AthletePlateArchitecture from "./pages/AthletePlateArchitecture";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/serverless-architecture" element={<ServerlessArchitecture />} />
           <Route path="/kubernetes-architecture" element={<KubernetesArchitecture />} />
           <Route path="/filesharing-architecture" element={<FileSharingArchitecture />} />
+          <Route path="/athlete-plate-architecture" element={<AthletePlateArchitecture />} />
           <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
