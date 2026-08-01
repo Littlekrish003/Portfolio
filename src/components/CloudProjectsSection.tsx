@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3, ExternalLink, Boxes, RefreshCw, Heart, GitBranch, Lock, Brain, Container, Terminal, Github, Gauge, Workflow } from 'lucide-react';
+import { Cloud, Zap, Shield, Activity, Globe, Server, Database, Upload, Image, Code, ArrowRight, Layers, Eye, MonitorCog, HardDrive, Network, Scaling, BarChart3, ExternalLink, Boxes, RefreshCw, Heart, GitBranch, Lock, Brain, Container, Terminal, Github, Gauge, Workflow, FolderUp, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -29,6 +29,12 @@ const skillBadges = [
   { name: "Linux", icon: Terminal },
   { name: "GitHub", icon: Github },
   { name: "Metrics Server", icon: Gauge },
+  { name: "Node.js", icon: Code },
+  { name: "Express.js", icon: Code },
+  { name: "MySQL", icon: Database },
+  { name: "PM2", icon: Gauge },
+  { name: "Bootstrap", icon: Layers },
+  { name: "Let's Encrypt SSL", icon: Lock },
 ];
 
 const cloudProjects = [
@@ -111,6 +117,30 @@ const cloudProjects = [
       { icon: Scaling, text: "Horizontal Pod Autoscaling" },
     ],
     architecture: ["User", "AWS EC2", "Minikube", "NodePort Service", "Application Pods", "Nginx Web App"],
+  },
+  {
+    title: "Cloud File Sharing Platform",
+    subtitle: "Full Stack • AWS Cloud • DevOps",
+    date: "August 2026",
+    icon: FolderUp,
+    iconGradient: "from-[hsl(199,89%,48%)] to-[hsl(217,91%,45%)]",
+    description: "Designed and deployed a secure cloud-based file management platform on AWS. Built with Node.js, Express, MySQL, Amazon S3, Nginx, PM2, Route 53, and HTTPS. Users can upload, download, and manage files through a custom domain secured with SSL.",
+    liveUrl: "https://fileshare.myserver.sbs",
+    architectureUrl: "/filesharing-architecture",
+    technologies: ["Node.js", "Express.js", "MySQL", "Amazon S3", "AWS EC2", "Nginx", "PM2", "Route 53", "Let's Encrypt SSL", "Bootstrap"],
+    features: [
+      { icon: Upload, text: "Secure file upload to Amazon S3" },
+      { icon: Trash2, text: "Download and delete files" },
+      { icon: Database, text: "MySQL metadata management" },
+      { icon: Globe, text: "Custom domain with Route 53" },
+      { icon: Lock, text: "HTTPS using Let's Encrypt" },
+      { icon: Shield, text: "Nginx reverse proxy" },
+      { icon: Gauge, text: "PM2 process manager" },
+      { icon: Layers, text: "Responsive Bootstrap UI" },
+      { icon: Server, text: "AWS EC2 deployment" },
+      { icon: Activity, text: "Production-ready architecture" },
+    ],
+    architecture: ["Users", "Route 53", "Let's Encrypt SSL", "Nginx", "Node.js (PM2)", "MySQL + Amazon S3"],
   },
 ];
 
