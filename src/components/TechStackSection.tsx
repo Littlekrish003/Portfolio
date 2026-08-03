@@ -35,6 +35,26 @@ const technologies = [
   }
 ];
 
+// Additional hands-on stack (from cloud & full-stack projects)
+const stackItems = [
+  { name: "Kubernetes", short: "K8s", color: "#326CE5" },
+  { name: "Docker", short: "DK", color: "#2496ED" },
+  { name: "Linux", short: "LX", color: "#F0B429" },
+  { name: "Nginx", short: "NG", color: "#009639" },
+  { name: "Node.js", short: "JS", color: "#5FA04E" },
+  { name: "Express", short: "EX", color: "#64748B" },
+  { name: "MySQL", short: "SQL", color: "#4479A1" },
+  { name: "Amazon S3", short: "S3", color: "#569A31" },
+  { name: "EC2", short: "EC2", color: "#FF9900" },
+  { name: "Route 53", short: "R53", color: "#8C4FFF" },
+  { name: "Lambda", short: "λ", color: "#FF9900" },
+  { name: "Amplify", short: "AMP", color: "#DD344C" },
+  { name: "Bedrock", short: "AI", color: "#01A88D" },
+  { name: "Git & GitHub", short: "GIT", color: "#F05033" },
+  { name: "CI/CD", short: "CD", color: "#6366F1" },
+  { name: "React", short: "RE", color: "#61DAFB" }
+];
+
 const TechStackSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -82,6 +102,32 @@ const TechStackSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto"
+        >
+          {stackItems.map((item, index) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.3, delay: 0.35 + index * 0.04 }}
+              whileHover={{ y: -3 }}
+              className="flex items-center gap-2 rounded-xl border border-border/60 bg-background/80 px-3 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <span
+                className="flex h-7 w-7 items-center justify-center rounded-lg text-[10px] font-bold text-white"
+                style={{ backgroundColor: item.color }}
+              >
+                {item.short}
+              </span>
+              <span className="text-sm font-medium text-muted-foreground">{item.name}</span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

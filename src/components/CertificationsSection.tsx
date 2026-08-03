@@ -14,7 +14,6 @@ import snWelcome from '@/assets/servicenow/welcome-to-servicenow.pdf';
 import snFlowDesigner from '@/assets/servicenow/flow-designer.pdf';
 import snAtf from '@/assets/servicenow/automated-test-framework.pdf';
 import snPi from '@/assets/servicenow/predictive-intelligence.pdf';
-import snNowAssist from '@/assets/servicenow/now-assist-executive.pdf';
 import snServicePortal from '@/assets/servicenow/service-portal.pdf';
 import snAes from '@/assets/servicenow/intro-app-engine-studio.pdf';
 import snItsm from '@/assets/servicenow/now-assist-itsm.pdf';
@@ -22,6 +21,18 @@ import snServiceBridge from '@/assets/servicenow/service-bridge-delivery.pdf';
 import redrobWebapp from '@/assets/redrob/redrob-webapp.png';
 import redrobSql from '@/assets/redrob/redrob-sql.png';
 import redrobCloud from '@/assets/redrob/redrob-cloud.png';
+import snPvWelcome from '@/assets/servicenow-preview/sn-welcome.png';
+import snPvFlow from '@/assets/servicenow-preview/sn-flow-designer.png';
+import snPvAtf from '@/assets/servicenow-preview/sn-atf.png';
+import snPvPi from '@/assets/servicenow-preview/sn-predictive.png';
+import snPvPortal from '@/assets/servicenow-preview/sn-service-portal.png';
+import snPvAes from '@/assets/servicenow-preview/sn-aes.png';
+import snPvItsm from '@/assets/servicenow-preview/sn-itsm.png';
+import snPvBridge from '@/assets/servicenow-preview/sn-service-bridge.png';
+import snNowAssistV2 from '@/assets/servicenow/now-assist-executive-v2.pdf';
+import snAcademicCohort from '@/assets/servicenow/academic-cohort.pdf';
+import snPvNowAssistExec from '@/assets/servicenow-preview/sn-now-assist-exec.png';
+import snPvAcademicCohort from '@/assets/servicenow-preview/sn-academic-cohort.png';
 
 // Featured certifications with badges
 const featuredCerts = [
@@ -85,15 +96,16 @@ const featuredCerts = [
 
 // ServiceNow Micro-Certifications
 const servicenowMicroCerts = [
-  { name: "Welcome to ServiceNow", issued: "Dec 21, 2024", url: snWelcome },
-  { name: "Flow Designer", issued: "Jan 20, 2025", url: snFlowDesigner },
-  { name: "Automated Test Framework", issued: "Jan 19, 2025", url: snAtf },
-  { name: "Predictive Intelligence", issued: "Jan 25, 2025", url: snPi },
-  { name: "Now Assist Executive", issued: "Jan 25, 2025", url: snNowAssist },
-  { name: "Service Portal", issued: "Mar 5, 2025", url: snServicePortal },
-  { name: "Introduction to App Engine Studio", issued: "2024", url: snAes },
-  { name: "Now Assist for ITSM Implementation", issued: "2024", url: snItsm },
-  { name: "Service Bridge Delivery Accreditation", issued: "2024", url: snServiceBridge }
+  { name: "Welcome to ServiceNow", issued: "Dec 21, 2024", url: snWelcome, preview: snPvWelcome },
+  { name: "Flow Designer", issued: "Jan 20, 2025", url: snFlowDesigner, preview: snPvFlow },
+  { name: "Automated Test Framework", issued: "Jan 19, 2025", url: snAtf, preview: snPvAtf },
+  { name: "Predictive Intelligence", issued: "Jan 25, 2025", url: snPi, preview: snPvPi },
+  { name: "Now Assist Executive", issued: "Jan 25, 2025", url: snNowAssistV2, preview: snPvNowAssistExec },
+  { name: "Service Portal", issued: "Mar 5, 2025", url: snServicePortal, preview: snPvPortal },
+  { name: "Introduction to App Engine Studio", issued: "Jan 26, 2025", url: snAes, preview: snPvAes },
+  { name: "Now Assist for ITSM Implementation", issued: "Mar 5, 2025", url: snItsm, preview: snPvItsm },
+  { name: "Service Bridge Delivery Accreditation", issued: "Mar 5, 2025", url: snServiceBridge, preview: snPvBridge },
+  { name: "Academic On-Demand Cohort", issued: "May 2, 2025", url: snAcademicCohort, preview: snPvAcademicCohort }
 ];
 
 const certifications = [{
@@ -271,26 +283,52 @@ const CertificationsSection = () => {
             <img src={servicenowLogo} alt="ServiceNow" className="w-6 h-6 object-contain" />
             ServiceNow Micro-Certifications
           </h3>
-          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
             {servicenowMicroCerts.map((cert, index) => (
               <motion.a
                 key={cert.name}
                 href={cert.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="group flex-1 min-w-[140px] max-w-[180px] bg-gradient-to-br from-green-500/10 to-emerald-600/10 border border-green-500/30 rounded-xl p-4 text-center hover:border-green-500/50 transition-all cursor-pointer"
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                className="group relative w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md bg-gradient-to-br from-card to-secondary/30 border border-border/50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer overflow-hidden"
               >
-                <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
-                  <BadgeCheck className="w-5 h-5 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative flex items-center gap-5">
+                  <div className="flex-shrink-0">
+                    <img
+                      src={cert.preview}
+                      alt={`${cert.name} ServiceNow micro-certification`}
+                      loading="lazy"
+                      className="w-24 h-24 object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform bg-muted"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                        Verified
+                      </span>
+                    </div>
+                    <h4 className="font-bold text-foreground text-lg leading-tight mb-1 group-hover:text-primary transition-colors">
+                      {cert.name}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-2">ServiceNow</p>
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {cert.issued}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xs font-semibold text-foreground leading-tight mb-1 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                  {cert.name}
-                </h4>
-                <p className="text-[10px] text-muted-foreground">{cert.issued}</p>
+                <div className="mt-4 pt-3 border-t border-border/50">
+                  <p className="text-xs text-muted-foreground font-mono truncate">
+                    Micro-Certification
+                  </p>
+                </div>
               </motion.a>
             ))}
           </div>

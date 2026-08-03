@@ -39,6 +39,28 @@ const skillBadges = [
 
 const cloudProjects = [
   {
+    title: "AI-Powered Athlete Performance Plate",
+    subtitle: "AI Project • HTML • CSS",
+    date: "December 2025",
+    icon: Brain,
+    iconGradient: "from-[hsl(150,65%,38%)] to-[hsl(160,70%,26%)]",
+    description: "My first AI project — a Smart Nutrition Analyst that translates everyday Indian meals into athlete-specific macros and actionable suggestions. Users build a meal, set their athlete profile, and instantly get calorie/macro targets, smart food recommendations, a 7-day workout plan, an automatic food photo analyzer, and day-wise tracking.",
+    liveUrl: "https://athlete.myserver.sbs/",
+    architectureUrl: "/athlete-plate-architecture",
+    technologies: ["HTML", "CSS", "JavaScript", "AI Vision API"],
+    features: [
+      { icon: Zap, text: "Meal Builder with common Indian foods" },
+      { icon: BarChart3, text: "Live calorie, protein, carb & fat breakdown" },
+      { icon: Activity, text: "Athlete profile targets by discipline, weight & goal" },
+      { icon: Brain, text: "Smart suggestions for protein, carb & fat boosts" },
+      { icon: Heart, text: "7-day workout plan with progress tracking" },
+      { icon: Image, text: "Automatic food photo analyzer" },
+      { icon: Database, text: "Daily tracking — save, load & merge days" },
+      { icon: Layers, text: "Responsive, clean UI with exportable summary" },
+    ],
+    architecture: ["User", "Meal Builder", "Macro Engine", "AI Photo Analyzer", "Daily Tracking"],
+  },
+  {
     title: "Production-Ready 3-Tier Web Application on AWS",
     subtitle: "3-Tier Architecture",
     date: "February 2026",
