@@ -35,7 +35,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Upload to S3
-        run: aws s3 sync dist/ s3://portfolio-myserver-bucket --delete
+        run: aws s3 sync dist/ s3://portfolio-krish-sbs-2026 --delete
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id E2GJXLOFFARB4S --paths "/*"
+        run: aws cloudfront create-invalidation \
+          --distribution-id E10PPKV1Z1SFU \
+          --paths "/*"
