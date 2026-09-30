@@ -38,6 +38,4 @@ jobs:
         run: aws s3 sync dist/ s3://portfolio-krish-sbs-2026 --delete
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation \
-          --distribution-id E10PPKV1Z1SFU \
-          --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E10PPKV1Z1SFU --paths "/*"
