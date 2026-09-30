@@ -200,7 +200,7 @@ const HeroSection = () => {
                 className="group relative overflow-hidden bg-gradient-to-r from-cloud-500 to-cloud-600 hover:from-cloud-600 hover:to-cloud-700 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 gap-2 w-full sm:w-auto px-8"
                 asChild
               >
-                <a href="http://resume.myserver.sbs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="http://resume.krish.sbs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Eye className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
                   View Resume
                 </a>
