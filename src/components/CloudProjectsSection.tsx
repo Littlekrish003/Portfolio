@@ -45,7 +45,7 @@ const cloudProjects = [
     icon: Brain,
     iconGradient: "from-[hsl(150,65%,38%)] to-[hsl(160,70%,26%)]",
     description: "My first AI project — a Smart Nutrition Analyst that translates everyday Indian meals into athlete-specific macros and actionable suggestions. Users build a meal, set their athlete profile, and instantly get calorie/macro targets, smart food recommendations, a 7-day workout plan, an automatic food photo analyzer, and day-wise tracking.",
-    liveUrl: "https://athlete.myserver.sbs/",
+    liveUrl: "https://athlete.krish.sbs/",
     architectureUrl: "/athlete-plate-architecture",
     technologies: ["HTML", "CSS", "JavaScript", "AI Vision API"],
     features: [
@@ -67,7 +67,7 @@ const cloudProjects = [
     icon: Cloud,
     iconGradient: "from-[hsl(201,96%,32%)] to-[hsl(201,100%,24%)]",
     description: "Designed and deployed a highly available and scalable 3-tier web architecture on AWS. Implemented load balancing, auto scaling, secure HTTPS communication, and DNS routing to simulate a real-world production environment.",
-    liveUrl: "https://3tier.myserver.sbs/",
+    liveUrl: "https://3tier.krish.sbs/",
     architectureUrl: "/threetier-architecture",
     technologies: ["EC2", "Auto Scaling", "Application Load Balancer", "RDS", "Route53", "ACM", "CloudWatch", "CI/CD"],
     features: [
@@ -105,7 +105,7 @@ const cloudProjects = [
     icon: Zap,
     iconGradient: "from-[hsl(150,60%,40%)] to-[hsl(150,70%,30%)]",
     description: "Deployed an AWS Lambda function to serve random cloud fun facts with Amazon Bedrock (Claude AI) integration for witty AI-enhanced responses. A solid foundation for modern serverless applications combining databases, APIs, and Generative AI.",
-    liveUrl: "https://cloudfunfacts.myserver.sbs",
+    liveUrl: "https://cloudfunfacts.krish.sbs",
     architectureUrl: "/funfacts-architecture",
     technologies: ["Lambda", "API Gateway", "DynamoDB", "Bedrock", "Amplify", "IAM", "Route53"],
     features: [
@@ -147,7 +147,7 @@ const cloudProjects = [
     icon: FolderUp,
     iconGradient: "from-[hsl(199,89%,48%)] to-[hsl(217,91%,45%)]",
     description: "Designed and deployed a secure cloud-based file management platform on AWS. Built with Node.js, Express, MySQL, Amazon S3, Nginx, PM2, Route 53, and HTTPS. Users can upload, download, and manage files through a custom domain secured with SSL.",
-    liveUrl: "https://fileshare.myserver.sbs",
+    liveUrl: "https://fileshare.krish.sbs",
     architectureUrl: "/filesharing-architecture",
     technologies: ["Node.js", "Express.js", "MySQL", "Amazon S3", "AWS EC2", "Nginx", "PM2", "Route 53", "Let's Encrypt SSL", "Bootstrap"],
     features: [
